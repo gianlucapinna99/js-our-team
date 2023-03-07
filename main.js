@@ -32,3 +32,30 @@ const teamMembers = [
       foto: 'barbara-ramos-graphic-designer.jpg'
     }
   ];
+
+  //Stampo a console i nomi 
+  for (let i = 0; i < teamMembers.length; i++) {
+    console.log(`Nome: ${teamMembers[i].nome}`);
+    console.log(`Ruolo: ${teamMembers[i].ruolo}`);
+    console.log(`Foto: ${teamMembers[i].foto}`);
+  }
+
+  // Aggiungo gli elementi alla pagina
+  const teamStuff = document.getElementById('team-members');
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const memberDiv = document.createElement('div');
+  const nomeElement = document.createElement('p');
+  const ruoloElement = document.createElement('p');
+  const fotoElement = document.createElement('img');
+
+  nomeElement.innerText = `Nome: ${teamMembers[i].nome}`;
+  ruoloElement.innerText = `Ruolo: ${teamMembers[i].ruolo}`;
+  fotoElement.src = `img/${teamMembers[i].foto}`;
+
+  memberDiv.appendChild(nomeElement);
+  memberDiv.appendChild(ruoloElement);
+  memberDiv.appendChild(fotoElement);
+
+  teamStuff.appendChild(memberDiv);
+}
